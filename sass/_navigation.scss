@@ -17,13 +17,22 @@
   padding: 10px;
   display: inline-block;
 }
+.menu {
+  display: none;
+}
 .menu > ul {
   display: flex;
   list-style-type: none;
 }
 .main-nav {
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  z-index: 10;
   .wrapper {
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -42,9 +51,9 @@
   }
 }
 .menu-button{
-  display: none;
-  width: 45px;
-  height: 31px;
+  display: block;
+  width: 40px;
+  height: 30px;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -62,7 +71,7 @@
 	position: absolute;
 	height: 3px;
 	width: 100%;
-	background: black;
+	background: white;
 	border-radius: 2px;
 	opacity: 1;
 	left: 0;

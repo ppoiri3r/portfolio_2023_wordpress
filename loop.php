@@ -17,6 +17,7 @@
 	<div class="stream-container">
 		<h1>These are her <?php echo $post_type; ?></h1>
 		<div class="form-container">
+			<button>Clear Filters</button>
 			<form action="#">
 				<fieldset>
 					<p>Filter by:</p>

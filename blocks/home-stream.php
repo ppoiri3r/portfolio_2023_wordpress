@@ -54,10 +54,11 @@
                       <?= get_the_excerpt(); ?>
                     </p>
                   <?php endif; ?>
+                  <?php if($live_link): ?>
                   <div class="links">
-                    <!-- <a class="secondary internal" href="<?php the_permalink(); ?>">Learn more</a> -->
                     <a class="secondary" href="<?php echo $live_link['url']; ?>" target="<?php echo $live_link['target']; ?>"><?php echo $live_link['title']; ?></a>
                   </div>
+                  <?php endif; ?>
                 </li>
               <?php endwhile; ?>
             </ul>
