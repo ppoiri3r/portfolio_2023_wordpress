@@ -1,0 +1,220 @@
+h1.block-title,
+h2.block-title {
+  display: block !important;
+  font-family: 'OuterBold';
+  text-transform: uppercase;
+  position: fixed;
+  top: 78px;
+  width: 875px;
+  max-width: 100%;
+  transition: 0.3s;
+  line-height: 1 !important;
+  // font-size: 3.5rem;
+  @media(max-width: $lg) {
+    width: 550px;
+  }
+  @media(max-width: $sm) {
+    font-size: 2rem;
+    position: static;
+  }
+}
+
+.social-contact {
+  position: fixed;
+  top: 232px;
+  transition: 0.3s;
+  @media(max-width: $sm) {
+    position: static;
+  }
+  ul {
+    list-style-type: none;
+    font-family: 'OuterThin';
+    text-transform: uppercase;
+    li {
+      position: relative;
+      line-height: 1.75;
+      transition: 0.3s;
+      @media(max-width: $sm) {
+        line-height: 1.25;
+      }
+      &.external {
+        position: relative;
+        padding-left: 24.5px;
+        @media(max-width: $sm) {
+          padding-left: 20px;
+        }
+        &::after {
+          content: url(./assets/external-link.svg);
+          position: absolute;
+          height: 21.5px;
+          width: 21.5px;
+          top: 3px;
+          left:0;
+          transition: 0.3s;
+          @media(max-width: $sm) {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        &:hover, &:focus {
+          &::after {
+            left:1px;
+            top: -1px;
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        @media(max-width: $sm) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.home-stream-block {
+  margin-left: 0 !important;
+  padding-bottom: 75px;
+  @media(max-width: $sm) {
+    padding-top: 20px;
+  }
+  .flex {
+    justify-content: space-between;
+    margin-top: 50px;
+    transition: 0.3s;
+    height: 76vh;
+    @media(max-width: $sm) {
+      margin-top: 20px;
+    }
+    .stream-container {
+      padding-left: 300px;
+      padding-top: 62px;
+      transition: 0.3s;
+      width: 100%;
+      @media(max-width: $xl) {
+        padding-left: 275px;
+      }
+      @media(max-width: $md) {
+        padding-left: 240px;
+      }
+      @media(max-width: $sm) {
+        padding-left: 0;
+        padding-top: 35px;
+      }
+      h2, h1 {
+        position: relative;
+        // font-size: 2.5rem;
+        font-family: 'OuterRegular';
+        line-height: 1 !important;
+        // font-size: 3.5rem !important;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: white;
+          bottom: -13.5px;
+          left: 0;
+        }
+      }
+      .stream {
+        ul {
+          margin: 35px 0 35px 0;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 45px;
+          list-style-type: none;
+          @media(max-width: $lg) {
+            display: flex;
+            flex-direction: column;
+          }
+          li {
+            position: relative;
+            .term {
+              display: none;
+              font-size: 1rem;
+              text-transform: uppercase;
+              font-family: 'Dogica';
+              color: #c1ff72;
+              padding: 2px;
+              letter-spacing: -1.5px;
+            }
+            h3 {
+              // font-size: 2rem;
+              line-height: 1.15;
+              text-transform: uppercase;
+            }
+            p {
+              max-width: 400px;
+              line-height: 1.25;
+              margin-top: 5px;
+              font-size: 1.65rem;
+            }
+            .links {
+              display: flex;
+              flex-direction: column;
+              margin-top: 15px;
+            }
+            .shopify {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.archive .wordpress {
+  margin-left: 7px;
+}
+
+// on scroll
+.scroll {
+  // padding-top: 20px !important;
+  .marquee {
+    // position: absolute;
+    bottom: 0;
+    top: initial;
+    background-color: #00000061;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+  }
+  .block-title {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    width: 200px;
+    @media(max-width: $md) {
+      width: 150px;
+    }
+  }
+  .social-contact {
+    top: 265px;
+    margin-top: 0;
+    @media(max-width: $md) {
+      top: 275px;
+    }
+    ul {
+    li {
+        padding-left: 20px;
+        line-height: 1.25;
+    
+        &::after {
+          height: 16px;
+          width: 16px;
+        }
+    
+        a {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .flex {
+    margin-top: 0;
+    .stream-container {
+      padding-top: 0;
+    }
+  }
+}

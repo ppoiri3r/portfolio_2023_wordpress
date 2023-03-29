@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Dogica';
+  src: url('./fonts/dogica/dogica.otf');
+}
+
+@font-face {
+  // bolder
+  font-family: 'OuterBold';
+  src: url('./fonts/made_outer_sans/MADEOuterSansAltBlack.otf');
+}
+
+@font-face {
+  // bolder
+  font-family: 'OuterThin';
+  src: url('./fonts/made_outer_sans/MADEOuterSansThin.otf');
+}
+
+@font-face {
+  // bolder
+  font-family: 'OuterRegular';
+  src: url('./fonts/made_outer_sans/MADEOuterSansRegular.otf');
+}
+
+body {
+  font-family: 'OuterThin' !important;
+  color: white !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+h1,
+.block-title {
+  font-family: 'OuterRegular';
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  line-height: 1;
+  @media(max-width: $lg) {
+    font-size: 2.5rem;
+  }
+  @media(max-width: $sm) {
+    font-size: 2rem;
+  }
+}
+
+.stream-container h1,
+.stream-container h2 {
+  font-size: 2.5rem !important;
+  @media(max-width: $sm) {
+    font-size: 2rem !important;
+  }
+}
+
+h2 {
+  // font-family: 'OuterRegular';
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 1;
+  @media(max-width: $md) {
+    font-size: 2rem;
+  }
+  // font-family: 'OuterRegular';
+}
+
+h3 {
+  font-size: 2rem;
+  @media(max-width: $md) {
+    font-size: 1.8rem;
+  }
+}
