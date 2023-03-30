@@ -3,11 +3,14 @@
 <div class="wrapper">
   <div class="content">
     <section class="home-stream-block">
-      <a href="<?php echo get_home_url(); ?>"><h2 class="block-title">Paula Poirier is a creative wordpress & shopify developer based in toronto, ontario</h2></a>
+      <a href="<?php echo get_home_url(); ?>"><h1 class="block-title">Paula Poirier is a creative wordpress & shopify developer. <span class="reveal-text">These are her <?php echo $post_type; ?>.</span></h1></a>
   <!-- container for social aside and stream -->
   <div class="flex">
     <!-- social aside -->
+    <div>
+    <?php get_template_part('template-parts/logo-p'); ?>
     <?php get_template_part('template-parts/social-aside'); ?>
+    </div>
 
 
     

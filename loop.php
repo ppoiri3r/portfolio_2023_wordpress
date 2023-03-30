@@ -15,19 +15,20 @@
 <?php // if there are posts, Start the Loop. ?>
 
 	<div class="stream-container">
-		<h1>These are her <?php echo $post_type; ?></h1>
+		<h2><?php echo $post_type; ?> Archive</h2>
 		<div class="form-container">
-			<button>Clear Filters</button>
-			<form action="#">
+			<form action="#" id="filter">
 				<fieldset>
 					<p>Filter by:</p>
 					<?php 
 					$terms = get_terms();
+					echo '<input name="type" id="all" value="all" type="radio">';
+					echo '<label for="all">Clear Filters</label>';
 					foreach($terms as $t) {
 						if($t->taxonomy == 'project-type') {
 							echo '<div>';
-							echo '<input name="type" id="'.$t->name.'" value="'.$t->name.'" type="radio"></>';
-							echo '<label for="'.$t->name.'">'.$t->name.'</label>';
+							echo '<input name="type" id="'.$t->slug.'" value="'.$t->term_id.'" type="radio"></>';
+							echo '<label for="'.$t->slug.'">'.$t->name.'</label>';
 							echo '</div>';
 						}
 					}

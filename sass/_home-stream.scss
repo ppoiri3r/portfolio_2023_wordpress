@@ -10,6 +10,9 @@ h2.block-title {
   transition: 0.3s;
   line-height: 1 !important;
   // font-size: 3.5rem;
+  span {
+    color: #c1ff72;
+  }
   @media(max-width: $lg) {
     width: 550px;
   }
@@ -19,9 +22,33 @@ h2.block-title {
   }
 }
 
+.logo {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 204px;
+  transition: 0.3s;
+  @media(max-width: $sm) {
+    position: initial;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 9px;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 .social-contact {
   position: fixed;
-  top: 232px;
+  top: 323px;
   transition: 0.3s;
   @media(max-width: $sm) {
     position: static;
@@ -174,6 +201,14 @@ h2.block-title {
 // on scroll
 .scroll {
   // padding-top: 20px !important;
+  .logo {
+    width: 75px;
+    height: 75px;
+    top: 237px;
+    @media(max-width: $md) {
+      top: 256px;
+    }
+  }
   .marquee {
     // position: absolute;
     bottom: 0;
@@ -191,10 +226,10 @@ h2.block-title {
     }
   }
   .social-contact {
-    top: 265px;
+    // top: 265px;
     margin-top: 0;
     @media(max-width: $md) {
-      top: 275px;
+      top: 341px;
     }
     ul {
     li {

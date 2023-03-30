@@ -21,11 +21,14 @@
 
   ?>
 <section class="home-stream-block">
-  <h1 class="block-title"><?php echo $title; ?></h1>
+  <a href="<?php get_home_url(); ?>"><h1 class="block-title"><?php echo $title; ?>.</h1></a>
   <!-- container for social aside and stream -->
   <div class="flex">
     <!-- social aside -->
-    <?php get_template_part('template-parts/social-aside'); ?>
+    <div>
+      <?php get_template_part('template-parts/logo-p'); ?>
+      <?php get_template_part('template-parts/social-aside'); ?>
+    </div>
 
     <!-- stream -->
     <div class="stream-container">
