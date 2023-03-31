@@ -1,0 +1,48 @@
+.secondary-stream .stream-container {
+  ul {
+    list-style-type: none;
+    li {
+      margin-bottom: 40px;
+      .content-container {
+        margin-top: 35px;
+        max-width: 800px;
+        line-height: 1.25;
+        font-size: 1.65rem;
+      }
+      &.features-list-item {
+        .single-features-list {
+          margin-top: 35px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 45px;
+          @media(max-width: $lg) {
+            display: flex;
+            flex-direction: column;
+          }
+          li {
+            position: relative;
+            h3 {
+              text-transform: uppercase;
+              line-height: 1.15;
+              padding-left: 15px;
+            }
+            p {
+              font-size: 1.65rem;
+              line-height: 1.25;
+              padding-left: 15px;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              border-radius: 100px;
+              background-color: #c1ff72;
+              top: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

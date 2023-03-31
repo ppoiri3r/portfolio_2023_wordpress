@@ -1,0 +1,42 @@
+.home-stream-block.secondary {
+  position: fixed;
+  // border: 1px solid red;
+  padding-bottom: 0;
+  top: 78px;
+  @media(max-width: $md) {
+    max-width: 150px;
+  }
+  @media(max-width: $sm) {
+    position: relative;
+    top: initial;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  h1 {
+    position: initial;
+    font-size: 1.25rem;
+    width: 200px;
+    @media(max-width: $sm) {
+      font-size: 2rem;
+      width: 100%;
+    }
+  }
+  .logo {
+    position: initial;
+    width: 65px;
+    height: 65px;
+    margin: 25px 0 15px 0;
+    @media(max-width: $sm) {
+      margin: 18px 0 5px 0;
+    }
+  }
+  .social-contact {
+    position: initial;
+    ul li {
+      line-height: 1.25;
+      a {
+        font-size: 1.5rem;
+      }
+    } 
+  }
+}

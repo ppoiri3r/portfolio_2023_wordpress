@@ -1,4 +1,5 @@
 export function animateOnScroll() {
+  if($('body').hasClass('home')) {
   let windowsize = $(window).width();
 
   // on page load 
@@ -36,4 +37,5 @@ export function animateOnScroll() {
       }
     });
   }
+}
 }

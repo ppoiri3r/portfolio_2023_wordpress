@@ -1,16 +1,8 @@
 <?php get_header(); ?>
 
 <div class="wrapper">
-  <div class="content">
-    <section class="home-stream-block">
-      <a href="<?php echo get_home_url(); ?>"><h1 class="block-title">Paula Poirier is a creative wordpress & shopify developer. <span class="reveal-text">These are her <?php echo $post_type; ?>.</span></h1></a>
-  <!-- container for social aside and stream -->
-  <div class="flex">
-    <!-- social aside -->
-    <div>
-    <?php get_template_part('template-parts/logo-p'); ?>
-    <?php get_template_part('template-parts/social-aside'); ?>
-    </div>
+  <?php get_template_part('template-parts/secondary-sidebar', ''); ?>
+  <!-- <div> -->
 
 
     
@@ -26,12 +18,16 @@
       * If you want to overload this in a child theme then include a file
       * called loop-archives.php and that will be used instead.
       */
+    echo '<section class="home-stream-block">';
+    echo '<div class="flex">';
     get_template_part( 'loop', 'archive' );
+    echo '</div>';
+    echo '</section>';
     ?>
 
-  </div><!--/content-->
 
-  <?php get_sidebar(); ?>
+  <!-- </div> -->
+  <!-- content -->
 
 </div> 
 

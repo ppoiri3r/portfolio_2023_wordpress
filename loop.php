@@ -46,6 +46,10 @@
 			<ul>
 			<?php while ( have_posts() ) : the_post(); 
 			$live_link = get_field('live_site', $post->ID);
+			$retired = get_field('retired', $post->ID);
+			$screenshots = get_field('show_screenshots', $post->ID);
+			$screenshot_cta = get_field('screenshot_cta', $post->ID);
+			$featured_cta = get_field('featured_cta', $post->ID);
 			if($post_type == 'projects') {
         $project_types = get_the_terms( $post->ID, 'project-type');
       };
@@ -61,20 +65,15 @@
 							<?= get_the_excerpt(); ?>
 						</p>
           <?php endif; ?>
-					<?php if($live_link): ?>
 					<div class="links">
-						<!-- <a class="secondary internal" href="<?php the_permalink(); ?>">Learn more</a> -->
-						<a class="secondary" href="<?php echo $live_link['url']; ?>" target="<?php echo $live_link['target']; ?>"><?php echo $live_link['title']; ?></a>
+						<?php if($featured_cta): ?>
+							<a class="secondary internal" href="<?php echo the_permalink(); ?>"><?php echo $featured_cta; ?></a>
+						<?php endif; ?>
+						<?php if($live_link): ?>
+							<!-- <a class="secondary internal" href="<?php the_permalink(); ?>">Learn more</a> -->
+							<a class="secondary" href="<?php echo $live_link['url']; ?>" target="<?php echo $live_link['target']; ?>"><?php echo $live_link['title']; ?></a>
+							<?php endif; ?>
           </div>
-					<?php endif; ?>
-
-					<!-- <section class="entry-content">
-						<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
-						<?php wp_link_pages( array(
-							'before' => '<div class="page-link"> Pages:',
-							'after' => '</div>'
-						)); ?>
-					</section>.entry-content -->
 
 
 				</li><!-- #post-## -->
@@ -84,9 +83,9 @@
 <!-- end of the stream container which was opened in archive.php -->
 		</div>
 <!-- end of the flex container that opened in archive.php -->
-	</div>	
+	<!-- </div>	 -->
 <!-- end of the home-stream-block section that opened in archive.php -->
-</section>
+<!-- </section> -->
 
 <?php // Display navigation to next/previous pages when applicable ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>

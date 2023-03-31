@@ -7,18 +7,30 @@ html {
   position: relative;
 }
 
-body.home .overlay,
-body.archive .overlay {
+body .overlay {
+  background-color: black !important;
   position: fixed;
   width: 100vw;
   height: 100vh;
-  max-height: 100%;
+  // max-height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
 }
+
+// body.home .overlay,
+// body.archive .overlay {
+//   position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   // max-height: 100%;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   // background-color: black;
+// }
 
 
 
@@ -81,6 +93,7 @@ body {
   transition: 0.3s;
   @media(max-width: $sm) {
     padding-top: 0 !important;
+    background-attachment:initial;
   }
 }
 
@@ -99,6 +112,9 @@ body {
   max-width: 1300px;
   width: 95%;
   margin: 0 auto;
+  @media(max-width: $sm) {
+    width: 93%;
+  }
 }
 
 .aligncenter {

@@ -14,6 +14,16 @@ function register_blocks() {
 		'mode'			=> 'edit',
 		'keywords'		=> array('columns', 'stream', 'text') 
 	));
+
+	acf_register_block( array(
+		'name'			=> 'secondary-stream',
+		'title'			=> __( 'Secondary Stream' ), 
+		'render_template'	=> 'blocks/secondary-stream.php', 
+		'category'		=> 'columns',
+		'icon'			=> 'menu-alt3',
+		'mode'			=> 'edit',
+		'keywords'		=> array('columns', 'stream', 'text') 
+	));
 }
 
 add_action('acf/init', 'register_blocks' );
