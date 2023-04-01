@@ -49,9 +49,9 @@ $bg_img_arc = get_field('body_background_image_archive', 'options');
   <!-- end of marquee -->
  <!-- <a href="#maincontent" class="skiplink">Go to Main Content</a> -->
 
-<header class="wrapper">
+<header class="">
   <div class="main-nav">
-    <div class="wrapper flex">
+    <div class="flex">
       <button class="menu-button">
         <span></span>
         <span></span>

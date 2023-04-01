@@ -2,6 +2,7 @@
 
 <?php if ( ! have_posts() ) : ?>
 
+
 	<article id="post-0" class="post error404 not-found">
 		<h1 class="entry-title">Not Found</h1>
 		<section class="entry-content">
@@ -15,6 +16,13 @@
 <?php // if there are posts, Start the Loop. ?>
 
 	<div class="stream-container">
+		<?php $terms = get_terms(); 
+		// foreach($terms as $t) {
+			if($t->taxonomy == 'project-type') {
+				echo '<h2>'.$taxonomy. 'Archive</h2>';
+			}
+		// }
+		?>
 		<h2><?php echo $post_type; ?> Archive</h2>
 		<div class="form-container">
 			<button id="clear">Clear Filters</button>
@@ -22,7 +30,7 @@
 				<fieldset>
 					<p>Filter by:</p>
 					<?php 
-					$terms = get_terms();
+					// $terms = get_terms();
 					// echo '<input name="type" id="all" value="all" type="radio">';
 					// echo '<label for="all">Clear Filters</label>';
 					foreach($terms as $t) {
@@ -52,10 +60,11 @@
 			$featured_cta = get_field('featured_cta', $post->ID);
 			if($post_type == 'projects') {
         $project_types = get_the_terms( $post->ID, 'project-type');
+				foreach($project_types as $project_type) {
+					$name = $project_type->name;
+				}
       };
-			foreach($project_types as $project_type) {
-				$name = $project_type->name;
-			}
+			// var_dump($post_type);
 			?>
 				<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h3 class="entry-title"><?php the_title(); ?><?php if($name == 'Wordpress'): ?><span><?php get_template_part('template-parts/wordpress-logo'); ?></span><?php endif; ?><?php if($name == 'Shopify'): ?><?php get_template_part('template-parts/shopify-logo'); ?><?php endif; ?>

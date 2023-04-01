@@ -12,7 +12,7 @@ export function navigation() {
 
   $(".menu-button").on("click", function(){
      $(this).toggleClass("open");
-     $(".menu").slideToggle();
+   //   $(".menu").slideToggle();
   })
 
 //   Resize function to close the mobile menu. Change MENU CONTAINER to navigation container of the theme
