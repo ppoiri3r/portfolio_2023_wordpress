@@ -8,8 +8,6 @@ export function filter() {
   
   function displayPosts(data) {
 
-    console.log(data);
-
     let id = data[0].id;
     let excerpt; 
     let title;
