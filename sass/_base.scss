@@ -76,6 +76,10 @@ body.archive .overlay {
   opacity: 80%;
 }
 
+body.single .overlay {
+  opacity: 75%;
+}
+
 header {
   height: 0 !important;
 }

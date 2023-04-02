@@ -14,6 +14,7 @@
 <?php
 $bg_img = get_field('body_background_image', 'options'); 
 $bg_img_arc = get_field('body_background_image_archive', 'options'); 
+$bg_img_single = get_field('single_post_body_background_image', 'options');
 ?>
 
 <style>
@@ -22,6 +23,9 @@ $bg_img_arc = get_field('body_background_image_archive', 'options');
   }
   body.archive {
     background-image:url('<?php echo $bg_img_arc['url']; ?>');
+  }
+  body.single {
+    background-image:url('<?php echo $bg_img_single['url']; ?>');
   }
 </style>
 

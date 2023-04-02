@@ -1,3 +1,7 @@
+<?php 
+global $post; 
+$post_id = $post->ID; 
+?>
 <section class="secondary-stream home-stream-block">
   <div class="flex">
     <!-- stream -->
@@ -10,6 +14,7 @@
         $overview_content = $overview_group['overview_content'];
         $project_features_group = get_sub_field('project_features');
         $features_content = $project_features['features_content'];
+        $live_link = get_field('live_site', $post_id);
       ?>
         <li>
           <h2><?php echo $overview_title ?></h2>
@@ -17,6 +22,7 @@
             <p class="content-container">
             <?php echo $overview_content; ?>
             </p>
+            <a class="secondary" target="<?php $live_link['target']; ?> "href="<?php echo $live_link['url']; ?>"><?php echo $live_link['title']; ?></a>
           </div>
         </li>
         <li class="features-list-item">
@@ -28,8 +34,16 @@
           if( have_rows('features_content') ): while ( have_rows('features_content') ) : the_row();     
           $single_feature_title = get_sub_field('single_feature_title');
           $single_feature_descrip = get_sub_field('single_feature_description');
+          $single_feature_link = get_sub_field('single_feature_link');
+          // $single_feat_link_url = $single_feature_link['url'];
+          // $single_feat_link_title = $single_feature_link['title'];
+          // $single_feat_link_target = $single_feature_link['target'];
+          // var_dump($single_feature_link);
           echo '<li><h3>'.$single_feature_title.'</h3>';
-          echo '<p>'. $single_feature_descrip .'</p></li>';
+          echo '<p>'. $single_feature_descrip .'</p>';
+          if($single_feature_link) {
+            echo '<a class="secondary" href="'.$single_feature_link['url'].'" target="'.$single_feature_link['target'].'">'.$single_feature_link['title'].'</a></li>';
+          }
           endwhile; endif;
         endwhile; endif;
         echo '</ul>';

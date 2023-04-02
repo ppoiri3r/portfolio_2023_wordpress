@@ -16,21 +16,24 @@
 <?php // if there are posts, Start the Loop. ?>
 
 	<div class="stream-container">
-		<?php $terms = get_terms(); 
-		// foreach($terms as $t) {
-			if($t->taxonomy == 'project-type') {
-				echo '<h2>'.$taxonomy. 'Archive</h2>';
-			}
-		// }
+		<?php 
+		$term = get_queried_object();
+		// var_dump($post);
+		if(is_tax() == 'true') {
+			echo '<h2>'. $term->name .' '.$post->post_type .' Archive</h2>';
+		}
+		if($post_type) {
+			echo '<h2>'.$post_type.' Archives</h2>';
+		}
 		?>
-		<h2><?php echo $post_type; ?> Archive</h2>
+		<?php if($post_type): ?>
 		<div class="form-container">
 			<button id="clear">Clear Filters</button>
 			<form action="#" id="filter">
 				<fieldset>
 					<p>Filter by:</p>
 					<?php 
-					// $terms = get_terms();
+					$terms = get_terms();
 					// echo '<input name="type" id="all" value="all" type="radio">';
 					// echo '<label for="all">Clear Filters</label>';
 					foreach($terms as $t) {
@@ -45,6 +48,7 @@
 				</fieldset>
 			</form>
 		</div>
+		<?php endif; ?>
 		<div class="feature__works stream">
 			<div class="progress container">
 				<span></span>
