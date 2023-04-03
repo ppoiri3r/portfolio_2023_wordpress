@@ -49,7 +49,6 @@
                   <?php if($project_types): ?>
                     <?php foreach ($project_types as $project_type): 
                     $name = $project_type->name; ?>
-                    <span class="term"><?php echo $name; ?></span>
                     <?php endforeach; ?>
                   <?php endif; ?>
                   <h3><?php the_title(); ?><?php if($name == 'Wordpress'): ?>

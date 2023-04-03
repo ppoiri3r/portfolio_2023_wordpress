@@ -35,10 +35,6 @@ $post_id = $post->ID;
           $single_feature_title = get_sub_field('single_feature_title');
           $single_feature_descrip = get_sub_field('single_feature_description');
           $single_feature_link = get_sub_field('single_feature_link');
-          // $single_feat_link_url = $single_feature_link['url'];
-          // $single_feat_link_title = $single_feature_link['title'];
-          // $single_feat_link_target = $single_feature_link['target'];
-          // var_dump($single_feature_link);
           echo '<li><h3>'.$single_feature_title.'</h3>';
           echo '<p>'. $single_feature_descrip .'</p>';
           if($single_feature_link) {

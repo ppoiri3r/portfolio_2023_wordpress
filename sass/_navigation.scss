@@ -60,7 +60,8 @@
 }
 
 .sub-menu{
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   padding-left: 60px;
   list-style-type: none;
@@ -81,7 +82,7 @@
 
 
 .menu-button.open ~ .menu {
-  display: block;
+  display: block !important;
 }
 
 // handling of the hamburger menu animation
